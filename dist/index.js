@@ -47,21 +47,20 @@ function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             let version = core.getInput('version');
-            core.info('Version is ');
-            if (version === null || version === void 0 ? void 0 : version.trim()) {
+            if (!(version === null || version === void 0 ? void 0 : version.trim())) {
                 version = yield (0, utils_1.getLatestVersion)();
             }
             core.info(`Preparing ReSharper Command Line Tools version '${version}'...`);
             core.info('Checking whether this version is already installed...');
             let toolsPath = tc.find(RESHAPER_CLT_CACHE_NAME, version);
-            if (toolsPath === null || toolsPath === void 0 ? void 0 : toolsPath.trim()) {
+            if (!(toolsPath === null || toolsPath === void 0 ? void 0 : toolsPath.trim())) {
                 toolsPath = yield installTools(version);
             }
             else {
                 core.info(`Version '${version}' already exists in cache. Using the already installed tools.`);
             }
             registerTools(toolsPath, version);
-            core.info(`Successfully installed ReSharper Command Line Tools version '${version}'!`);
+            core.info(`Successfully installed ReSharper Command Line Tools version '${version}' at '${toolsPath}'!`);
         }
         catch (error) {
             if (error instanceof Error)
