@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "rootDir": "__tests__",
+  },
+  "include": [
+    "__tests__/**/*.test.ts"
+  ]
+}
