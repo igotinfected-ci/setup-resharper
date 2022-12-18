@@ -1,4 +1,4 @@
-name: "Setup ReSharper Command Line Tools"
+name: "ReSharper Command Line Tools setup"
 description: "Setup ReSharper Command Line Tools for use in a GitHub action."
 author: "Jason Rebelo Neves (igotinfected)"
 
