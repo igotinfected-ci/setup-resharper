@@ -1,11 +1,18 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: "Setup ReSharper Command Line Tools"
+description: "Setup ReSharper Command Line Tools for use in a GitHub action."
+author: "Jason Rebelo Neves (igotinfected)"
+
 inputs:
-  milliseconds: # change this
-    required: true
-    description: 'input description here'
-    default: 'default value if applicable'
+  version:
+    description: >
+      ReSharper version to install.
+      If not supplied, the latest version is installed."
+    required: false
+
 runs:
-  using: 'node16'
-  main: 'dist/index.js'
+  using: "node16"
+  main: "dist/index.js"
+
+branding:
+  icon: "package"
+  color: "red"
